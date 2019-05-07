@@ -55,8 +55,8 @@ h2 {
   margin: 0 auto;
 }
 
-.winner-display {
-  text-align: center;
+.winner-display-1,
+.winner-display-2 {
   font-size: 2rem;
   text-decoration: underline;
 }
