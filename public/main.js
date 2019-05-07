@@ -26,7 +26,7 @@ const teamOneAddOne = () => {
     return 21
   }
   if (teamOneScore === 21) {
-    document.getElementByClass('winner-display-1').innerHTML = ' Won!'
+    document.getElementByClass('winner-display-1').textContent = ' Won!'
   }
   teamOneScore += 1
   document.querySelector('.team1Score').textContent = teamOneScore
@@ -85,9 +85,8 @@ const teamTwoWon = () => {
 const resetScores = () => {
   teamOneScore = document.querySelector('.team1Score').textContent = 0
   teamTwoScore = document.querySelector('.team2Score').textContent = 0
-  periodNumber = document.getElementByClass(
-    'team-1-add-1-button'
-  ).disabled = false
+  periodNumber = document.querySelector('.period-number').textContent = 1
+  document.getElementByClass('team-1-add-1-button').disabled = false
   document.getElementByClass('team-1-subtract-1-button').disabled = false
   document.getElementByClass('team-2-add-1-button').disabled = false
   document.getElementByClass('team-2-subtract-1-button').disabled = false
