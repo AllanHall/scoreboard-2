@@ -49,3 +49,14 @@ h2 {
 .update-score section {
   margin: 1rem;
 }
+
+.reset-button {
+  display: block;
+  margin: 0 auto;
+}
+
+.winner-display {
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+}

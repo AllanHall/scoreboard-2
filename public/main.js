@@ -61,7 +61,38 @@ const teamTwoUpdateName = () => {
   teamNameTwo = document.querySelector('.team-2-name').value
   document.querySelector('.team2Name').textContent = teamNameTwo
 }
-
+/* If team one wins
+const teamOneWon = () => {
+  if (teamOneScore === 21) {
+    document.getElementByClass('team-1-add-1-button').disabled = true
+    document.getElementByClass('team-1-subtract-1-button').disabled = true
+    document.getElementByClass('team-2-add-1-button').disable = true
+    document.getElementByClass('team-2-subtract-1-button').disabled = true
+    document.getElementByClass("winner-display").innerHTML = teamNameOne + ' Won!'
+  }
+}
+*/
+/* If team two wins
+const teamTwoWon = () => {
+  if (teamTwoScore === 21) {
+    document.getElementByClass('team-1-add-1-button').disabled = true
+    document.getElementByClass('team-1-subtract-1-button').disabled = true
+    document.getElementByClass('team-2-add-1-button').disable = true
+    document.getElementByClass('team-2-subtract-1-button').disabled = true
+    document.getElementByClass("winner-display").innerHTML = teamNameTwo + ' Won!'
+  }
+}
+*/
+/*
+const resetScores = () => {
+  teamOneScore === 0
+  teamTwoScore === 0
+  document.getElementByClass('team-1-add-1-button').disabled = false
+  document.getElementByClass('team-1-subtract-1-button').disabled = false
+  document.getElementByClass('team-2-add-1-button')disabled = false
+  document.getElementByClass('team-2-subtract-1-button')disabled = false
+}
+*/
 document.addEventListener('DOMContentLoaded', main)
 document.querySelector('.update-period').addEventListener('click', updatePeriod)
 document
@@ -82,3 +113,17 @@ document
 document
   .querySelector('.update-team-2-name')
   .addEventListener('click', teamTwoUpdateName)
+/*
+document
+  .querySelector('.team1score')
+  .addEventListener('', teamOneWon)
+document
+  .querySelector('.team2score)
+  .addEventListener('', teamTwoWon)
+*/
+
+/*
+document
+  .querySelector('reset-button.')
+  .addEventListener('click', resetScores)
+*/
