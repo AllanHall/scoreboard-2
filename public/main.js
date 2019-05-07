@@ -22,14 +22,30 @@ const updatePeriod = () => {
 
 // Prevents score from going above 21 - team 1
 const teamOneAddOne = () => {
-  if (teamOneScore >= 21) {
-    return 21
+  if (teamOneScore <= 20) {
+    teamOneScore += 1
+    document.querySelector('.team1Score').textContent = teamOneScore
+  } else {
+    document.querySelector('.winner-display-1').textContent = 'You Won!'
+    document.querySelector('.team-1-add-1-button').disabled = true
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+    document.querySelector('.team-2-add-1-button').disabled = true
+    document.querySelector('.team-2-subtract-1-button').disabled = true
   }
-  if (teamOneScore === 21) {
-    document.getElementByClass('winner-display-1').textContent = ' Won!'
+}
+
+// Prevents score from going above 21 - team 2
+const teamTwoAddOne = () => {
+  if (teamTwoScore <= 20) {
+    teamTwoScore += 1
+    document.querySelector('.team2Score').textContent = teamTwoScore
+  } else {
+    document.querySelector('.winner-display-2').textContent = 'You Won!'
+    document.querySelector('.team-1-add-1-button').disabled = true
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+    document.querySelector('.team-2-add-1-button').disabled = true
+    document.querySelector('.team-2-subtract-1-button').disabled = true
   }
-  teamOneScore += 1
-  document.querySelector('.team1Score').textContent = teamOneScore
 }
 
 // Prevents score from going below zero - team 1
@@ -39,15 +55,6 @@ const teamOneSubtractOne = () => {
   }
   teamOneScore -= 1
   document.querySelector('.team1Score').textContent = teamOneScore
-}
-
-// Prevents score from going above 21 - team 2
-const teamTwoAddOne = () => {
-  if (teamTwoScore >= 21) {
-    return 21
-  }
-  teamTwoScore += 1
-  document.querySelector('.team2Score').textContent = teamTwoScore
 }
 
 // Prevents score from going below zero - team 2
@@ -69,27 +76,15 @@ const teamTwoUpdateName = () => {
   document.querySelector('.team2Name').textContent = teamNameTwo
 }
 
-/* If team two wins
-const teamTwoWon = () => {
-  if (teamTwoScore === 21) {
-    document.getElementByClass('team-1-add-1-button').disabled = true
-    document.getElementByClass('team-1-subtract-1-button').disabled = true
-    document.getElementByClass('team-2-add-1-button').disable = true
-    document.getElementByClass('team-2-subtract-1-button').disabled = true
-    document.getElementByClass("winner-display-2").innerHTML = teamNameTwo + ' Won!'
-  }
-}
-*/
-
 // Resets all scores to zero and enables buttons again
 const resetScores = () => {
   teamOneScore = document.querySelector('.team1Score').textContent = 0
   teamTwoScore = document.querySelector('.team2Score').textContent = 0
   periodNumber = document.querySelector('.period-number').textContent = 1
-  document.getElementByClass('team-1-add-1-button').disabled = false
-  document.getElementByClass('team-1-subtract-1-button').disabled = false
-  document.getElementByClass('team-2-add-1-button').disabled = false
-  document.getElementByClass('team-2-subtract-1-button').disabled = false
+  document.querySelector('.team-1-add-1-button').disabled = false
+  document.querySelector('.team-1-subtract-1-button').disabled = false
+  document.querySelector('.team-2-add-1-button').disabled = false
+  document.querySelector('.team-2-subtract-1-button').disabled = false
 }
 
 document.addEventListener('DOMContentLoaded', main)
