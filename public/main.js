@@ -25,6 +25,9 @@ const teamOneAddOne = () => {
   if (teamOneScore >= 21) {
     return 21
   }
+  if (teamOneScore === 21) {
+    document.getElementByClass('winner-display-1').innerHTML = ' Won!'
+  }
   teamOneScore += 1
   document.querySelector('.team1Score').textContent = teamOneScore
 }
@@ -66,17 +69,6 @@ const teamTwoUpdateName = () => {
   document.querySelector('.team2Name').textContent = teamNameTwo
 }
 
-// If team one wins
-const teamOneWon = () => {
-  if (teamOneScore === 21) {
-    document.getElementByClass('team-1-add-1-button').disabled = true
-    document.getElementByClass('team-1-subtract-1-button').disabled = true
-    document.getElementByClass('team-2-add-1-button').disable = true
-    document.getElementByClass('team-2-subtract-1-button').disabled = true
-    document.getElementByClass('winner-display-1').innerHTML =
-      teamNameOne + ' Won!'
-  }
-}
 /* If team two wins
 const teamTwoWon = () => {
   if (teamTwoScore === 21) {
@@ -93,10 +85,12 @@ const teamTwoWon = () => {
 const resetScores = () => {
   teamOneScore = document.querySelector('.team1Score').textContent = 0
   teamTwoScore = document.querySelector('.team2Score').textContent = 0
-  document.getElementByClass('team-1-add-1-button').enabled = true
-  document.getElementByClass('team-1-subtract-1-button').enabled = true
-  document.getElementByClass('team-2-add-1-button').enabled = true
-  document.getElementByClass('team-2-subtract-1-button').enabled = true
+  periodNumber = document.getElementByClass(
+    'team-1-add-1-button'
+  ).disabled = false
+  document.getElementByClass('team-1-subtract-1-button').disabled = false
+  document.getElementByClass('team-2-add-1-button').disabled = false
+  document.getElementByClass('team-2-subtract-1-button').disabled = false
 }
 
 document.addEventListener('DOMContentLoaded', main)
@@ -120,9 +114,3 @@ document
   .querySelector('.update-team-2-name')
   .addEventListener('click', teamTwoUpdateName)
 document.querySelector('.reset-button').addEventListener('click', resetScores)
-document.querySelector('.team1score').addEventListener('', teamOneWon)
-/*
-document
-  .querySelector('.team2score)
-  .addEventListener('', teamTwoWon)
-*/
