@@ -85,6 +85,8 @@ const resetScores = () => {
   document.querySelector('.team-1-subtract-1-button').disabled = false
   document.querySelector('.team-2-add-1-button').disabled = false
   document.querySelector('.team-2-subtract-1-button').disabled = false
+  document.querySelector('.winner-display-1').textContent = ' '
+  document.querySelector('.winner-display-2').textContent = ' '
 }
 
 document.addEventListener('DOMContentLoaded', main)
